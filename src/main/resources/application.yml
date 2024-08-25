@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/run-tracker
+    username: run-tracker
+    password: "!QAZxsw2"
+  jackson:
+    serialization.write-dates-as-timestamps: false
+    date-format: yyyy-MM-dd HH:mm:ss
+  liquibase:
+    change-log: db/changelog-master.yaml
+    database-change-log-lock-table: liquibase_lock
+    database-change-log-table: liquibase_changelog
+server:
+  servlet:
+    context-path: /run-tracker

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/default.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <property name="CONSOLE_PATTERN"
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss}){blue} %clr(%-5level){yellow} %clr(%30.30logger){magenta} %clr(-){green} %msg%n"/>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.web.servlet.DispatcherServlet" level="DEBUG"/>
+
+</configuration>

@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2.0
+      author: pashabezborod
+      changes:
+        - createTable:
+            tableName: run
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_run_user
+                    referencedTableName: user
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: start_latitude
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_longitude
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_datetime
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: finish_latitude
+                  type: double
+              - column:
+                  name: finish_longitude
+                  type: double
+              - column:
+                  name: finish_datetime
+                  type: timestamptz
+              - column:
+                  name: distance
+                  type: integer
