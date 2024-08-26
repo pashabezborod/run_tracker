@@ -1,4 +1,4 @@
-This projects implements simple API for Running Tracker
+This project implements simple API for Running Tracker
 
 Launch app using docker compose
 ``
